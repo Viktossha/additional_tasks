@@ -44,33 +44,12 @@ function App_2() {
         setTasks([])
     }
 
-    let [filter, setFilter] = useState<FilterValuesType>("all");
-
-    let tasksForTodolist = tasks;
-
-    if (filter === "active") {
-        tasksForTodolist = tasks.filter(t => !t.isDone);
-    }
-    if (filter === "completed") {
-        tasksForTodolist = tasks.filter(t => t.isDone);
-    }
-
-    if (filter === "first_three") {
-        // let arr = [1, 2, 3]
-        // tasksForTodolist = tasks.filter((t) => arr.includes(t.id));
-        tasksForTodolist = tasks.filter((t) => t.id < 4);
-    }
-
-    function changeFilter(value: FilterValuesType) {
-        setFilter(value);
-    }
-
     return (
         <div className="App">
             <Todolist title="What to learn"
-                      tasks={tasksForTodolist}
+                      tasks={tasks}
                       removeTask={removeTask}
-                      changeFilter={changeFilter}
+                      //changeFilter={changeFilter}
                       removeAllTasks = {removeAllTasks}/>
         </div>
     );
