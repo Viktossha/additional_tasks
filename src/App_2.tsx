@@ -56,8 +56,9 @@ function App_2() {
     }
 
     if (filter === "first_three") {
-        let arr = [1, 2, 3]
-        tasksForTodolist = tasks.filter((t) => arr.includes(t.id));
+        // let arr = [1, 2, 3]
+        // tasksForTodolist = tasks.filter((t) => arr.includes(t.id));
+        tasksForTodolist = tasks.filter((t) => t.id < 4);
     }
 
     function changeFilter(value: FilterValuesType) {
