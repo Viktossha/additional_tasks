@@ -3,6 +3,7 @@ import './App.css';
 import {Tasks} from "./components/Tasks";
 import App_2 from "./components/App_2";
 import {OnOff} from "./components/OnOff";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion";
 
 
 // Hi Guys!
@@ -132,6 +133,8 @@ function App() {
             <Tasks data={data2}/>
             <App_2/>
             <OnOff/>
+            <UncontrolledAccordion titleValue={'Menu'} collapsed={false}/>
+            <UncontrolledAccordion titleValue={'Users'} collapsed={false}/>
         </div>
     );
 }
