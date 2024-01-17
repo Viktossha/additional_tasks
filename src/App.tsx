@@ -133,8 +133,8 @@ function App() {
             <Tasks data={data2}/>
             <App_2/>
             <OnOff/>
-            <UncontrolledAccordion titleValue={'Menu'} collapsed={false}/>
-            <UncontrolledAccordion titleValue={'Users'} collapsed={false}/>
+            <UncontrolledAccordion titleValue={'Menu'} />
+            <UncontrolledAccordion titleValue={'Users'} />
         </div>
     );
 }
