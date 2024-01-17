@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
-import {Tasks} from "./Tasks";
-import App_2 from "./App_2";
+import {Tasks} from "./components/Tasks";
+import App_2 from "./components/App_2";
+import {OnOff} from "./components/OnOff";
 
 
 // Hi Guys!
@@ -130,6 +131,7 @@ function App() {
             <Tasks data={data1}/>
             <Tasks data={data2}/>
             <App_2/>
+            <OnOff/>
         </div>
     );
 }

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './App.css';
+import '../App.css';
 import {Todolist} from './Todolist';
 
 export type FilterValuesType = "all" | "active" | "completed" | 'first_three';

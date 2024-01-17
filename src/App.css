@@ -4,9 +4,9 @@
   display: flex;
 }
 
-.App > div {
-  margin-right: 50px;
-}
+/*.App > div {*/
+/*  margin-right: 50px;*/
+/*}*/
 
 .error {
   border: red 1px solid;
@@ -22,5 +22,35 @@
 
 .is-done {
   opacity: 0.5;
+}
+
+.first {
+  width: 200px;
+  height: 100px;
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: center;
+}
+
+.second {
+  width: 200px;
+  height: 100px;
+  border: 1px solid black;text-align: center;
+  vertical-align: center;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
 }
 
