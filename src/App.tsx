@@ -4,6 +4,7 @@ import {Tasks} from "./components/Tasks";
 import App_2 from "./components/App_2";
 import {OnOff} from "./components/OnOff";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion";
+import {Rating} from "./components/Rating";
 
 
 // Hi Guys!
@@ -135,6 +136,7 @@ function App() {
             <OnOff/>
             <UncontrolledAccordion titleValue={'Menu'} />
             <UncontrolledAccordion titleValue={'Users'} />
+            <Rating value={5}/>
         </div>
     );
 }
