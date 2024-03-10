@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Tasks} from "./components/Tasks";
 import App_2 from "./components/App_2";
 import {OnOff} from "./components/OnOff";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion";
 import {Rating} from "./components/Rating";
+import {Accordion} from "./components/Accordion";
+import PS_3 from "./components/PS_3";
 
 
 // Hi Guys!
@@ -128,6 +130,8 @@ function App() {
         ]
     }
 
+    let [accordionCollapsed, setAccordionCollapsed] = useState(false);
+
     return (
         <div className="App">
             <Tasks data={data1}/>
@@ -137,6 +141,8 @@ function App() {
             <UncontrolledAccordion titleValue={'Menu'} />
             <UncontrolledAccordion titleValue={'Users'} />
             <Rating value={5}/>
+            <Accordion titleValue={'Menu_2'} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
+            <PS_3/>
         </div>
     );
 }
