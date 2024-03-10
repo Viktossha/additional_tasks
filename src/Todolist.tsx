@@ -1,5 +1,5 @@
 import React, {ChangeEvent, KeyboardEvent, useRef, useState} from 'react';
-import {FilterValuesType} from './App';
+import {FilterValuesType} from './components/PS_3';
 
 type TaskType = {
     id: string
