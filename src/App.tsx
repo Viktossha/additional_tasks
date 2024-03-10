@@ -6,7 +6,7 @@ import {OnOff} from "./components/OnOff";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion";
 import {Rating} from "./components/Rating";
 import {Accordion} from "./components/Accordion";
-import PS_3 from "./components/PS_3";
+import PS_DOP_3 from "./components/PS_DOP_3";
 
 
 // Hi Guys!
@@ -142,7 +142,7 @@ function App() {
             <UncontrolledAccordion titleValue={'Users'} />
             <Rating value={5}/>
             <Accordion titleValue={'Menu_2'} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
-            <PS_3/>
+            <PS_DOP_3/>
         </div>
     );
 }

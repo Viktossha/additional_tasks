@@ -39,7 +39,7 @@ type PropsType =
         completed: boolean
     }
 
-function PS_3() {
+function PS_DOP_3() {
     const [todos, setTodos] = useState<Array<PropsType>>([])
 
     const axiosRequest=()=>{
@@ -92,7 +92,7 @@ function PS_3() {
     );
 }
 
-export default PS_3;
+export default PS_DOP_3;
 
 
 //----------------------------------------------------------------------------------------
