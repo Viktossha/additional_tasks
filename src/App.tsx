@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import './App.css';
 import {Tasks} from "./components/Tasks";
 import App_2 from "./components/App_2";
-import {OnOff} from "./components/OnOff";
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion";
 import {Rating} from "./components/Rating";
 import {Accordion} from "./components/Accordion";
 import PS_DOP_3 from "./components/PS_DOP_3";
 import PS_3 from "./components/PS_3";
 import PS_4 from "./components/PS_4";
-import {UncontrolledOnOff} from "./components/UncontrolledOnOff";
+import {OnOff} from "./components/OnOff";
 
 
 // Hi Guys!
@@ -134,13 +134,14 @@ function App() {
     }
 
     let [accordionCollapsed, setAccordionCollapsed] = useState(false);
+    let [status, setStatus] = useState(false)
 
     return (
         <div className="App">
             <Tasks data={data1}/>
             <Tasks data={data2}/>
             <App_2/>
-            <OnOff/>
+            <UncontrolledOnOff/>
             <UncontrolledAccordion titleValue={'Menu'} />
             <UncontrolledAccordion titleValue={'Users'} />
             <Rating value={5}/>
@@ -148,7 +149,7 @@ function App() {
             <PS_DOP_3/>
             <PS_3/>
             <PS_4/>
-            <UncontrolledOnOff status={false}/>
+            <OnOff status={status} onClick={setStatus}/>
         </div>
     );
 }
