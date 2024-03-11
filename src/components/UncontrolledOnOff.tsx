@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 
 type PropsType = {
-    //status: boolean
+    onChange: (status: boolean) => void
 }
 
 
-export const UncontrolledOnOff:React.FC<PropsType> = (props) => {
+export const UncontrolledOnOff: React.FC<PropsType> = (props) => {
 
     const [status, setStatus] = useState(false)
 
@@ -33,13 +33,24 @@ export const UncontrolledOnOff:React.FC<PropsType> = (props) => {
         backgroundColor: status ? 'green' : 'red'
     }
 
-        return (
-            <div>
-                <div style={onStyle} onClick={() => {setStatus(true)}}>On</div>
-                <div style={offStyle} onClick={() => {setStatus(false)}}>Off</div>
-                <div style={indicatorStyle}></div>
-            </div>
-        );
+    const onClicked = () => {
+        setStatus(true);
+        props.onChange(true)
+    }
+
+    const offClicked = () => {
+        setStatus(false);
+        props.onChange(false)
+    }
+
+
+    return (
+        <div>
+            <div style={onStyle} onClick={onClicked}>On</div>
+            <div style={offStyle} onClick={offClicked}>Off</div>
+            <div style={indicatorStyle}></div>
+        </div>
+    );
 
 
 };

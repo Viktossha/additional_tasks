@@ -134,14 +134,14 @@ function App() {
     }
 
     let [accordionCollapsed, setAccordionCollapsed] = useState(false);
-    let [status, setStatus] = useState(false)
+    let [status, setStatus] = useState<boolean>(false)
 
     return (
         <div className="App">
             <Tasks data={data1}/>
             <Tasks data={data2}/>
             <App_2/>
-            <UncontrolledOnOff/>
+            <UncontrolledOnOff onChange={setStatus}/> {status.toString()}
             <UncontrolledAccordion titleValue={'Menu'} />
             <UncontrolledAccordion titleValue={'Users'} />
             <Rating value={5}/>
