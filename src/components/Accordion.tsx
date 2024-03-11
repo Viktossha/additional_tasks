@@ -23,7 +23,7 @@ type AccordionTitlePropsType = {
 }
 const AccordionTitle = (props: AccordionTitlePropsType) => {
     return (
-        <h3 onClick={() => props.onClick(props.collapsed)}>{props.title}</h3>
+        <h3 onClick={() => props.onClick(!props.collapsed)}>{props.title}</h3>
     )
 }
 
