@@ -9,6 +9,7 @@ import {Accordion} from "./components/Accordion";
 import PS_DOP_3 from "./components/PS_DOP_3";
 import PS_3 from "./components/PS_3";
 import PS_4 from "./components/PS_4";
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff";
 
 
 // Hi Guys!
@@ -143,10 +144,11 @@ function App() {
             <UncontrolledAccordion titleValue={'Menu'} />
             <UncontrolledAccordion titleValue={'Users'} />
             <Rating value={5}/>
-            <Accordion titleValue={'Menu_2'} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
+            <Accordion titleValue={'Menu_2'} collapsed={accordionCollapsed} onClick={() => setAccordionCollapsed(!accordionCollapsed)}/>
             <PS_DOP_3/>
             <PS_3/>
             <PS_4/>
+            <UncontrolledOnOff status={false}/>
         </div>
     );
 }
