@@ -1,13 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
+import { action } from '@storybook/addon-actions';
 import {Accordion } from './Accordion';
 import React, {useState} from "react";
 
-const meta: Meta<typeof Accordion> = {
-    component: Accordion,
-};
+export default {
+    component: Accordion
+}
 
-export default meta;
+// const meta: Meta<typeof Accordion> = {
+//     component: Accordion,
+// };
+//
+// export default meta;
 //
 // type Story = StoryObj<typeof Accordion>;
 // export const FirstStory: Story = {
@@ -18,10 +22,11 @@ export default meta;
 //     }
 // }
 
+const onClickHandler = action('onClick')
 export const CollapsedAccordion = () => {
     return  <Accordion titleValue={'Collapsed Accordion'}
                        collapsed={true}
-                       onClick={() => {}}
+                       onClick={onClickHandler}
             />
 
 }
