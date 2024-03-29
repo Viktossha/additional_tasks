@@ -2,12 +2,13 @@ import React, {useState} from 'react';
 
 type PropsType = {
     onChange: (status: boolean) => void
+    defaultStatus?: boolean
 }
 
 
 export const UncontrolledOnOff: React.FC<PropsType> = (props) => {
 
-    const [status, setStatus] = useState(false)
+    const [status, setStatus] = useState(props.defaultStatus ? props.defaultStatus : false)
 
     const onStyle = {
         width: "30px",
