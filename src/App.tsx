@@ -4,12 +4,14 @@ import {Tasks} from "./components/Tasks";
 import App_2 from "./components/App_2";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion";
-import {Rating} from "./components/Rating";
-import {Accordion} from "./components/Accordion";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
+import {Accordion} from "./components/Accordion/Accordion";
 import PS_DOP_3 from "./components/PS_DOP_3";
 import PS_3 from "./components/PS_3";
 import PS_4 from "./components/PS_4";
 import {OnOff} from "./components/OnOff";
+import {Counter} from "./components/Counter";
+import {UncontrolledRating} from "./components/UncontrolledRating";
 
 
 // Hi Guys!
@@ -135,6 +137,7 @@ function App() {
 
     let [accordionCollapsed, setAccordionCollapsed] = useState(false);
     let [status, setStatus] = useState<boolean>(false)
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
 
     return (
         <div className="App">
@@ -144,12 +147,14 @@ function App() {
             <UncontrolledOnOff onChange={setStatus}/> {status.toString()}
             <UncontrolledAccordion titleValue={'Menu'} />
             <UncontrolledAccordion titleValue={'Users'} />
-            <Rating value={5}/>
+            <Rating value={3} onClick={setRatingValue}/>
             <Accordion titleValue={'Menu_2'} collapsed={accordionCollapsed} onClick={() => setAccordionCollapsed(!accordionCollapsed)}/>
             <PS_DOP_3/>
             <PS_3/>
             <PS_4/>
+            <UncontrolledRating/>
             <OnOff status={status} onClick={setStatus}/>
+            <Counter/>
         </div>
     );
 }
