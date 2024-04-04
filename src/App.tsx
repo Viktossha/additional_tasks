@@ -2,16 +2,15 @@ import React, {useState} from 'react';
 import './App.css';
 import {Tasks} from "./components/Tasks";
 import App_2 from "./components/App_2";
-import {UncontrolledOnOff} from "./components/UncontrolledOnOff";
-import {UncontrolledAccordion} from "./components/UncontrolledAccordion";
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {Accordion} from "./components/Accordion/Accordion";
 import PS_DOP_3 from "./components/PS_DOP_3";
 import PS_3 from "./components/PS_3";
 import PS_4 from "./components/PS_4";
-import {OnOff} from "./components/OnOff";
-import {Counter} from "./components/Counter";
-import {UncontrolledRating} from "./components/UncontrolledRating";
+import {OnOff} from "./components/OnOff/OnOff";
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 
 
 // Hi Guys!
@@ -148,13 +147,15 @@ function App() {
             <UncontrolledAccordion titleValue={'Menu'} />
             <UncontrolledAccordion titleValue={'Users'} />
             <Rating value={3} onClick={setRatingValue}/>
-            <Accordion titleValue={'Menu_2'} collapsed={accordionCollapsed} onClick={() => setAccordionCollapsed(!accordionCollapsed)}/>
+            <Accordion titleValue={'Menu_2'} collapsed={accordionCollapsed}
+                       onChange={() => setAccordionCollapsed(!accordionCollapsed)}
+                       onClick={()=>{}}
+                       items={[{title: 'HTML', value: 1}, {title: 'CSS', value: 2}, {title: 'JS', value: 3}, {title: 'REACT', value: 4}]}/>
             <PS_DOP_3/>
             <PS_3/>
             <PS_4/>
-            <UncontrolledRating/>
+            {/*<UncontrolledRating onChange={}/>*/}
             <OnOff status={status} onClick={setStatus}/>
-            <Counter/>
         </div>
     );
 }
