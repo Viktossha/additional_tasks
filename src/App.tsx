@@ -11,6 +11,7 @@ import PS_3 from "./components/PS_3";
 import PS_4 from "./components/PS_4";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {Select} from "./components/Select/Select";
 
 
 // Hi Guys!
@@ -138,6 +139,14 @@ function App() {
     let [status, setStatus] = useState<boolean>(false)
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
 
+    let [selectValue, setSelectValue] = useState(1)
+    let [selectCollapsed, setSelectCollapsed] = useState(true)
+
+    const onChangeSelectHandler = (value: any) => {
+        setSelectValue(value);
+        setSelectCollapsed(!selectCollapsed)
+    }
+
     return (
         <div className="App">
             <Tasks data={data1}/>
@@ -156,6 +165,7 @@ function App() {
             <PS_4/>
             {/*<UncontrolledRating onChange={}/>*/}
             <OnOff status={status} onClick={setStatus}/>
+            <Select collapsed={selectCollapsed} value={selectValue} items={[{title: 'HTML', value: 1}, {title: 'CSS', value: 2}, {title: 'JS', value: 3}, {title: 'REACT', value: 4}]} onClick={onChangeSelectHandler} onClickTitle={() => setSelectCollapsed(!selectCollapsed)}/>
         </div>
     );
 }
