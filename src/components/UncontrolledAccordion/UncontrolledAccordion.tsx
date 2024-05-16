@@ -1,18 +1,24 @@
-import React, {useReducer, useState} from 'react';
-import {action} from "@storybook/addon-actions";
+import React, {useReducer} from 'react';
+import {Simulate} from "react-dom/test-utils";
 
 type PropsType = {
     titleValue: string
     //collapsed: boolean
 }
 
-const TOGGLE_CONSTANT = 'TOGGLE-COLLAPSED'
+export const TOGGLE_CONSTANT = 'TOGGLE-COLLAPSED'
 
-const reducer = (state: boolean, action: ActionType) => {
-    if (action.type === TOGGLE_CONSTANT) {
-        return !state
+export type StateType = {
+    collapsed: boolean
+}
+
+export const reducer = (state: StateType, action: ActionType): StateType => {
+    switch (action.type) {
+        case TOGGLE_CONSTANT:
+            return {...state, collapsed: !state.collapsed}
+        default:
+            throw new Error("Error action type")
     }
-
     return state
 }
 
@@ -23,13 +29,13 @@ type ActionType = {
 export const UncontrolledAccordion = (props: PropsType) => {
 
     //const [collapsed, setCollapsed] = useState(false)
-    const [collapsed, dispatch] = useReducer(reducer, false)
+    const [state, dispatch] = useReducer(reducer, {collapsed: false})
 
     return (
         <div>
             {/*<AccordionTitle title={props.titleValue} onClick={() => {setCollapsed(!collapsed)}}/>*/}
             <AccordionTitle title={props.titleValue} onClick={() => {dispatch({type: TOGGLE_CONSTANT})}}/>
-            {!collapsed && <AccordionBody/>}
+            {!state.collapsed && <AccordionBody/>}
         </div>
     );
 };
