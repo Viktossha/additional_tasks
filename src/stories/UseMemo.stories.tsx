@@ -1,4 +1,4 @@
-import {useMemo, useState} from "react";
+import React, {useMemo, useState} from "react";
 
 export default {
     title: 'useMemo demo'
@@ -30,10 +30,40 @@ export const Example = () => {
     }
 
     return <>
-        <input value={a} onChange={(e) => {setA(+e.currentTarget.value)}}/>
-        <input value={b} onChange={(e) => {setB(+e.currentTarget.value)}}/>
+        <input value={a} onChange={(e) => {
+            setA(+e.currentTarget.value)
+        }}/>
+        <input value={b} onChange={(e) => {
+            setB(+e.currentTarget.value)
+        }}/>
         <hr/>
         <div>Result for a: {resultA}</div>
         <div>Result for b: {resultB}</div>
+    </>
+}
+
+const SecretUsers = (props: { users: Array<string> }) => {
+    console.log('users render')
+    return <div>{props.users.map((u, i) => <div key={i}>{u}</div>)}</div>
+}
+
+const Users = React.memo(SecretUsers)
+
+export const Example2 = () => {
+    const [counter, setCounter] = useState(0);
+    const [users, setUsers] = useState(['Dimych', 'Masha', 'Anna']);
+    console.log('example2 render')
+
+    let newArray = useMemo(() => {
+        return users.filter(u => u.toLowerCase().indexOf('a') > -1)
+    }, [users])
+
+    return <>
+        <button onClick={() => {
+            setCounter(counter + 1)
+        }}>+
+        </button>
+        {counter}
+        <Users users={newArray}/>
     </>
 }
