@@ -78,13 +78,16 @@ export const LikeUseCallback = () => {
         setBooks(newUsers)
     }
 
+    const memoizedAddBook = useMemo(() => {
+        return addBook}, [books])
+
     return <>
         <button onClick={() => {
             setCounter(counter + 1)
         }}>+
         </button>
         {counter}
-        <Book addBook={addBook}/>
+        <Book addBook={memoizedAddBook}/>
     </>
 }
 
